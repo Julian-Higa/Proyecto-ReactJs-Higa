@@ -1,16 +1,36 @@
 // UpperCamelCase
 import './NavBar.scss'
+import { Link } from 'react-router-dom'
 
 const NavBar = () => {
     return( 
         <div className='navbar-primary'>
-            <h1>Elo Boost</h1>
-            <ul>
-                <li><button>Inicio</button></li>
-                <li><button>Contratación</button></li>
-                <li><button>Sobre Nosotros</button></li>
-                <li><button>Contacto</button></li>
-            </ul>
+            <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div className="container-fluid">
+                    <Link to='/'>
+                        <img src='./Multimedia/logotipo_png.png'/>
+                    </Link>
+                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                        <span className="navbar-toggler-icon"></span>
+                    </button>
+                    <div className="collapse navbar-collapse" id="navbarText">
+                        <ul className="navbar-nav mx-auto">
+                            <li className="nav-item">
+                                <Link className="nav-link active" aria-current="page" to=''>Lol</Link>
+                            </li>
+                            <li className="nav-item">
+                            <Link className="nav-link active" aria-current="page" to=''>CsGo</Link>
+                            </li>
+                            <li className="nav-item">
+                            <Link className="nav-link active" aria-current="page" to=''>Valorant</Link>
+                            </li>
+                        </ul>
+                        <span className="navbar-text">
+                        Proyecto Final ReactJs Julian Higa
+                        </span>
+                    </div>
+                </div>
+            </nav>
         </div>
     )
 }

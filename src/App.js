@@ -1,4 +1,5 @@
 import './App.scss';
+import { BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import NavBar from './components/NavBar/NavBar';
 
 
@@ -8,8 +9,13 @@ function App() {
   return (
     //JSX
      
-    <div className="container" style={styleApp}>
-      <NavBar/>
+    <div className="App">
+
+      <Router>
+        <NavBar/>
+      </Router>
+      
+
     </div>
   );
 }
