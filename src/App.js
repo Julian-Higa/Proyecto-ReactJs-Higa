@@ -1,10 +1,15 @@
-import './App.css';
+import './App.scss';
+import NavBar from './components/NavBar/NavBar';
+
 
 function App() {
+  const styleApp ={ padding: '10px 20px', marginTop: 10}
+
   return (
     //JSX
-    <div className="App">
-      <h1>Hola Mundo</h1>
+     
+    <div className="container" style={styleApp}>
+      <NavBar/>
     </div>
   );
 }
