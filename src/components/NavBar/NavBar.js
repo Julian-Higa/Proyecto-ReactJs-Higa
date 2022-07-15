@@ -1,6 +1,9 @@
 // UpperCamelCase
 import './NavBar.scss'
 import { Link } from 'react-router-dom'
+import CartWidgets from '../CartWidgets/CartWidgets'
+//import CartWidgets from './components/CartWidgets/CartWidgets';
+
 
 const NavBar = () => {
     return( 
@@ -19,12 +22,16 @@ const NavBar = () => {
                                 <Link className="nav-link active" aria-current="page" to=''>Lol</Link>
                             </li>
                             <li className="nav-item">
-                            <Link className="nav-link active" aria-current="page" to=''>CsGo</Link>
+                                <Link className="nav-link active" aria-current="page" to=''>CsGo</Link>
                             </li>
                             <li className="nav-item">
-                            <Link className="nav-link active" aria-current="page" to=''>Valorant</Link>
+                                <Link className="nav-link active" aria-current="page" to=''>Valorant</Link>
                             </li>
+                            <div>
+                            <CartWidgets/>
+                            </div>
                         </ul>
+                        
                         <span className="navbar-text">
                         Proyecto Final ReactJs Julian Higa
                         </span>
