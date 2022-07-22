@@ -1,7 +1,6 @@
 import './App.scss';
 import { BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import NavBar from './components/NavBar/NavBar';
-import ItemProduct from './components/ItemProduct/ItemProduct';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import Modal from './components/Modal/Modal';
 

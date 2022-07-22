@@ -1,7 +1,7 @@
-import { useState } from 'react'
-import './ItemProduct.scss'
+import { useState, useEffect } from 'react'
+import './Item.scss'
 
-const ItemProduct = ({data, action}) => {
+const Item = ({data, action}) => {
     const [contador, setContador] = useState(1)
 
     const {title, image, price, stock} = data
@@ -16,7 +16,7 @@ const ItemProduct = ({data, action}) => {
     }
 
     return(
-        <div className='item-product'>
+        <div className='item'>
             <img src={`/assets/Items/${image}`} alt="Imagen producto" />
             <p>{title}</p>
             <span> Por división </span>
@@ -32,4 +32,4 @@ const ItemProduct = ({data, action}) => {
     )
 }
 
-export default ItemProduct
+export default Item
