@@ -1,0 +1,38 @@
+.tiem-detail{
+    margin: 160px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr;
+        grid-column-gap: 10px;
+        grid-row-gap: 0px;
+}
+
+.item-detail-image{
+    margin-left: 200px; 
+
+  
+}
+
+.item-detail-info{
+    width: 50%;  
+    padding-left: 25%;
+    padding-bottom: 120px;
+    
+
+    display: flex;
+    align-items: center;  
+
+
+    display: grid;
+    grid-area: 1 / 2 / 2 / 3;
+}
+
+
+.info-texto{
+    padding-right: 100px;
+}
+
+.item-detail-count{
+    display: flex;
+    justify-content: flex-start;
+}

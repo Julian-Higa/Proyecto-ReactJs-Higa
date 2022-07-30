@@ -19,7 +19,7 @@ const ItemListContainer =({section}) => {
                 setListProducts(res)
             })
             .catch( (error) => { // Falla la respuesta
-                console.log("la llama fallo")
+                console.log("fallo")
             })
             .finally( () => {})
     }, [])

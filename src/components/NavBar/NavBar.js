@@ -1,4 +1,3 @@
-// UpperCamelCase
 import './NavBar.scss'
 import { Link } from 'react-router-dom'
 import CartWidgets from '../CartWidgets/CartWidgets'
@@ -27,9 +26,7 @@ const NavBar = () => {
                             <li className="nav-item">
                                 <Link className="nav-link active" aria-current="page" to=''>Valorant</Link>
                             </li>
-                            <div>
                             <CartWidgets/>
-                            </div>
                         </ul>
                         
                         <span className="navbar-text">

@@ -1,8 +1,9 @@
 import './App.scss';
-import { BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import Modal from './components/Modal/Modal';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import ItemDetail from './components/ItemDetail/ItemDetail';
 
 
 
@@ -11,17 +12,16 @@ function App() {
 
   return (
     //JSX
-     
+    
+    <BrowserRouter>
     <div className="container" style={styleApp} >
-
-      <Router>
-        <NavBar/>
-      </Router>
-      
+      <NavBar/>
+      <Routes>
+        <Route path='/'/>
+        <Route path="*" element={<h1>ERROR 404</h1>}/>
+      </Routes>
       <div className= 'main-container'>
-        <ItemListContainer section="LOL"/>
-        <ItemListContainer section="CsGo"/>
-        <ItemListContainer section="Valorant"/>
+        <ItemDetail/>
       </div>
       <Modal title="MODAL DE REGISTRO">
         <form>
@@ -30,6 +30,7 @@ function App() {
         </form>
       </Modal>
     </div>
+    </BrowserRouter>
   );
 }
 
