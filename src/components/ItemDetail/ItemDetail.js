@@ -1,7 +1,11 @@
+import { useParams } from 'react-router-dom';
+
 import ItemCount from '../ItemCount/ItemCount';
 import './ItemDetail.scss';
 
-const ItemDetail = () => {
+const ItemDetail = ({ item }) => {
+
+    const onAdd = () =>{};
 
     return(
         <>
@@ -13,7 +17,7 @@ const ItemDetail = () => {
                     <span className="category">League Of Legends</span>
                     <h2>Bronce</h2>
                     <span className="info-texto">Liga bronce, luego de la contratación podrá especificar el modo de boosteo.</span>
-                    <ItemCount className="item-detail-count"/>
+                    <ItemCount onAdd={onAdd} className="item-detail-count"/>
                 </div>
             </div>
         </>

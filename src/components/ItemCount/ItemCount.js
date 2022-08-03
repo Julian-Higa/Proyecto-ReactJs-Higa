@@ -3,12 +3,12 @@ import './ItemCount.scss';
 
 
 
-const ItemCount = ({stock}) => {
+const ItemCount = ({stock, initial, onAdd }) => {
     
-    const [contador, setContador] = useState(1)
+    const [contador, setContador] = useState(initial)
 
     const addNumber = () => {
-        if(contador < stock)
+        if(contador < stock + 1)
         setContador(contador + 1)
     }
     const removeNumber = () => {
@@ -21,6 +21,7 @@ const ItemCount = ({stock}) => {
                 <button onClick={removeNumber}>-</button>
                 <p>{contador}</p>
                 <button onClick={addNumber}>+</button>
+                <button onClick={onAdd}>Terminar compra</button>
             </div>
     )
 }
