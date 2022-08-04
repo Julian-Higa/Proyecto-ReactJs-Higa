@@ -1,23 +1,36 @@
-import { useParams } from 'react-router-dom';
-
+import { useState } from 'react';
 import ItemCount from '../ItemCount/ItemCount';
+import { Link } from 'react-router-dom';
 import './ItemDetail.scss';
+import Categoria from '../Category/category';
+
 
 const ItemDetail = ({ item }) => {
+    const {price, title, image, stock, category, description} = item;
 
-    const onAdd = () =>{};
+    const [counter, setCounter] = useState(1);
+
 
     return(
         <>
             <div className="item-detail">
                 <div className="item-detail-image">
-                    <img src="/assets/Items/BronzeEmblem2022.png" alt="imagen" />
+                    <img src={`/assets/Items/${image}`} alt="imagen producto" />
                 </div>
                 <div className="item-detail-info">
-                    <span className="category">League Of Legends</span>
-                    <h2>Bronce</h2>
-                    <span className="info-texto">Liga bronce, luego de la contratación podrá especificar el modo de boosteo.</span>
-                    <ItemCount onAdd={onAdd} className="item-detail-count"/>
+                    <span className="category"><Categoria categoria={category}/></span>
+                    <h2>{title}</h2>
+                    <span className="info-texto">{description + ", luego de la contratación podrá especificar el modo de boosteo."}</span>
+                    <ItemCount stock={stock} counter={counter} setCounter={setCounter} />
+                    
+                    {
+                        counter > 0 ? 
+                            <>
+                                <>Precio total:{price * counter}</>
+                                <Link to={`/cart`}> <button>TERMINAR COMPRA</button>  </Link>
+                            </>
+                            : <></>
+                    }
                 </div>
             </div>
         </>

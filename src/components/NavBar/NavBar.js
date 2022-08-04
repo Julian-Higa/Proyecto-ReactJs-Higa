@@ -18,15 +18,19 @@ const NavBar = () => {
                     <div className="collapse navbar-collapse" id="navbarText">
                         <ul className="navbar-nav mx-auto">
                             <li className="nav-item">
-                                <Link className="nav-link active" aria-current="page" to=''>Lol</Link>
+                                <Link className="nav-link active" aria-current="page" to='products/lol'>Lol</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link active" aria-current="page" to=''>CsGo</Link>
+                                <Link className="nav-link active" aria-current="page" to='products/csgo'>CsGo</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link active" aria-current="page" to=''>Valorant</Link>
+                                <Link className="nav-link active" aria-current="page" to='products/valorant'>Valorant</Link>
                             </li>
-                            <CartWidgets/>
+                            <li>
+                            <Link to="/cart">
+                                <CartWidgets/>
+                            </Link>  
+                            </li>
                         </ul>
                         
                         <span className="navbar-text">

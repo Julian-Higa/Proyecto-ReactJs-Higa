@@ -2,10 +2,12 @@ import { useState, useEffect } from "react"
 import ItemList from "../ItemList/ItemList"
 import './ItemListContainer.scss'
 import products from '../../utils/products.mock'
+import { useParams } from "react-router-dom"
 
 const ItemListContainer =({section}) => {
     
     const [listProducts, setListProducts] = useState([])
+    const { category } = useParams();
 
     const getProducts = new Promise( (resolve, reject) => {
         setTimeout( () => {
@@ -15,14 +17,27 @@ const ItemListContainer =({section}) => {
 
     useEffect(() => {
         getProducts
-            .then( (res) => { 
-                setListProducts(res)
+            .then( (res) => {
+                if (category){
+                    let filterResult = res.filter((product) => {
+                        if(product.category == category){
+                            return true;
+                        }
+                        return false;
+                    })
+
+                    setListProducts(filterResult)
+                } 
+                else{
+                    setListProducts(res)
+                }
+
             })
             .catch( (error) => { // Falla la respuesta
                 console.log("fallo")
             })
             .finally( () => {})
-    }, [])
+    }, [category])
 
     return(
         <div className='list-products'>

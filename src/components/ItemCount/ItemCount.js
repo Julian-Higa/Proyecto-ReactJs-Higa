@@ -1,27 +1,23 @@
-import { useState } from "react";
 import './ItemCount.scss';
 
 
 
-const ItemCount = ({stock, initial, onAdd }) => {
-    
-    const [contador, setContador] = useState(initial)
+const ItemCount = ({stock, counter, setCounter }) => {
 
     const addNumber = () => {
-        if(contador < stock + 1)
-        setContador(contador + 1)
+        if(counter < stock)
+        setCounter(counter + 1)
     }
     const removeNumber = () => {
-        if(contador > 0)
-        setContador(contador - 1)
+        if(counter > 0)
+        setCounter(counter - 1)
     }
 
     return(
             <div className='countProd'>
                 <button onClick={removeNumber}>-</button>
-                <p>{contador}</p>
+                <p>{counter}</p>
                 <button onClick={addNumber}>+</button>
-                <button onClick={onAdd}>Terminar compra</button>
             </div>
     )
 }

@@ -1,9 +1,9 @@
 import './App.scss';
 import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
-import Modal from './components/Modal/Modal';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
-import ItemDetail from './components/ItemDetail/ItemDetail';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
+
 
 
 
@@ -17,18 +17,12 @@ function App() {
     <div className="container" style={styleApp} >
       <NavBar/>
       <Routes>
-        <Route path='/'/>
+        <Route path='/' element={<ItemListContainer />}/>
+        <Route path='/products/:category' element={<ItemListContainer />}/>
+        <Route path='/item/:id' element={<ItemDetailContainer />}/>
+        <Route path='/cart' element={<>cart </>}/>
         <Route path="*" element={<h1>ERROR 404</h1>}/>
       </Routes>
-      <div className= 'main-container'>
-        <ItemDetail/>
-      </div>
-      <Modal title="MODAL DE REGISTRO">
-        <form>
-          <input type="text"/>
-          <button>Enviar</button>
-        </form>
-      </Modal>
     </div>
     </BrowserRouter>
   );
