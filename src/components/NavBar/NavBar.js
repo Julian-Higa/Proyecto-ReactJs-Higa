@@ -1,7 +1,7 @@
 import './NavBar.scss'
 import { Link } from 'react-router-dom'
 import CartWidgets from '../CartWidgets/CartWidgets'
-//import CartWidgets from './components/CartWidgets/CartWidgets';
+
 
 
 const NavBar = () => {
@@ -26,10 +26,8 @@ const NavBar = () => {
                             <li className="nav-item">
                                 <Link className="nav-link active" aria-current="page" to='products/valorant'>Valorant</Link>
                             </li>
-                            <li>
-                            <Link to="/cart">
-                                <CartWidgets/>
-                            </Link>  
+                            <li className="nav-item">
+                                <CartWidgets/>  
                             </li>
                         </ul>
                         
