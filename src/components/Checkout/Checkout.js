@@ -6,6 +6,7 @@ import {Link} from 'react-router-dom'
 import Modal from './../Modal/Modal'
 import db from '../../firebaseConfig.js'
 import { collection, addDoc } from 'firebase/firestore'
+import TextField from '@mui/material/TextField';
 
 
 const Checkout = () => {
@@ -34,7 +35,8 @@ const Checkout = () => {
                 return {
                     id: product.id,
                     title: product.title,
-                    price: product.price
+                    price: product.price,
+                    quantity: product.quantity
                 }
             } ),
             buyer: {},
@@ -82,21 +84,27 @@ const Checkout = () => {
                             </>
                         ) : (
                             <form onSubmit={submitData}>
-                                <input 
+                                <TextField
+                                    label='Nombre'
+                                    variant='filled' 
                                     type='text' 
                                     name='name' 
                                     placeholder='Ingrese el nombre'
                                     onChange={handleChange}
                                     value={formData.name}
                                 />
-                                <input 
+                                <TextField
+                                    label='Teléfono'
+                                    variant='filled' 
                                     type='number' 
                                     name='phone' 
                                     placeholder='Ingrese el telefono' 
                                     value={formData.phone}
                                     onChange={handleChange}
                                 />
-                                <input 
+                                <TextField
+                                    label='Mail'
+                                    variant='filled'
                                     type='email' 
                                     name='email' 
                                     placeholder='Ingrese el mail'
