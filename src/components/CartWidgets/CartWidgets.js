@@ -5,11 +5,12 @@ import { CartContext } from '../../context/CartContext';
 import ImageList from '@mui/material/ImageList';
 import CartProductItem from './../CartProductItem/CartProductItem'
 import './CartWidgets.scss'
+import CartWithCounter from './../CartWithCounter/CartWithCounter'
 
 const CartWidgets = () => {
     const [anchorEl, setAnchorEl] = useState(null);
 
-    const { cartProducts, clear, totalPrice, totalProducts } = useContext(CartContext)
+    const { cartProducts, clear, totalPrice, totalProducts, qty } = useContext(CartContext)
 
     const open = Boolean(anchorEl);
     const handleClick = (event) => {
@@ -21,10 +22,7 @@ const CartWidgets = () => {
     return( 
         <>
             {cartProducts.length !== 0 && <p>{totalProducts}</p>}
-            <i class="fa-solid fa-cart-shopping carrito-compra" 
-
-                onClick={handleClick}
-            ></i>
+            <CartWithCounter onClick={handleClick} qty={qty} />
             <Menu
                 id="basic-menu"
                 anchorEl={anchorEl}
